@@ -14,7 +14,7 @@ function App() {
   // UseState: Holder på staten til SearchBar 
   const [content, setContent] = useState([])
   const [query, setQuery] = useState("James Bond")
-  const [currentId, setCurrentId] = useState("")
+  const [currentId, setCurrentId] = useState("James Bond")
 
 
   // Async, fetch, await for å hente API data
@@ -37,6 +37,7 @@ function App() {
 
   useEffect(()=>{
     getData()
+    console.log(currentId)
   
   },[query])
 
