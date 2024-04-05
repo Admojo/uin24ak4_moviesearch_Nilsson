@@ -1,0 +1,26 @@
+@import 'layout';
+@import 'designelements';
+@import 'postpage';
+
+$colorBlue: #8bc2e6;
+
+
+body{
+    background-color: $colorBlue;
+
+
+.status-box{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}    
+.Alive{
+    background-color: green;
+}
+
+.Dead{
+    background-color: red;
+}
+
+
+}

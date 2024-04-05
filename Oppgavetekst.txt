@@ -1,0 +1,28 @@
+Oppgaver
+
+    [x]Opprette GitHub-repository med branches.
+    [x]Sett opp en React-app i GitHub-repositoriet ved hjelp av create-react-app.
+    [ ]Sett opp en Layout med HTML for søkefelt og opplisting av bøker.
+    [ ]Lag nødvendige komponenter og API-funksjonskall for å liste opp alle bøkene i James Bond-serier fra OpenLibrarys API på forsiden av applikasjonen når det ikke er gjort et søk
+    [ ]Lag nødvendig funksjonalitet for et boksøk.
+        [ ]Søket skal ikke returnere resultater før brukeren har skrevet minimum tre tegn i søkefeltet.
+        [ ]Søket skal returnere resultater fra OpenLibrarys API, basert på tittel-feltet.
+        [ ]Søkeresultater skal vises i stedet for listen med James Bond-bøker. Dere velger selv om dere vil rute til egen søkeresultatside eller erstatte listen med filmer på forsiden.
+        [ ]Søkeresultater skal vise tittel, første år boken er publisert, forfatter, gjennomsnittlig rating og en knapp som leder til et Amazon.com-søk (ved hjelp av feltet amazon_id i APIet og URL-strukturen https://www.amazon.com/s?k=0395082544) i en fornuftig HTML-struktur.
+            (Obs: hvis dere ikke får opp poster-bildet, må dere sjekke instillingene på eventuelle AdBlock-extensions dere bruker i nettleseren deres)
+
+Ekstraoppgave
+
+    [ ]I søkeresultatene, vis en knapp med teksten "Mer om filmen". Ved klikk på knappen, gjør et API-kall til denne filmen ved hjelp av IMDB ID 
+    (Se Examples på OMDB Links to an external site.). 
+    Route resultatet til en egen side om filmen, og vis all informasjon som returneres fra APIet som en film-profil.
+
+Minstekrav
+
+    Prosjektet skal leveres individuelt, som et GitHub-repository.
+    Prosjektet skal ha god semantisk HTML-struktur og utnyttelse av CSS.
+    Prosjektet skal inneholde en fungerende react-app som lister opp James Bond-bøker på forsiden. Filmene skal være hentet via OpenLibrarys API.
+    Søk skal fungere og returnere relevante treff fra OpenLibrarys API.
+    Prosjektet skal minimum innholde komponentene
+        "searchresults", som lister opp søkeresultater i "bookcards"
+        "bookcard", som innholder listevisning av en bok (for både søkeresultater og forsiden)
