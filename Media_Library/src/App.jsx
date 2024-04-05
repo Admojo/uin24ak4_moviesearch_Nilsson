@@ -1,10 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 import './App.css'
 import Home from './components/Home'
 import Layout from './components/Layout'
-
-
-import { useEffect, useState } from 'react'
 import Search from './components/Search'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
@@ -22,10 +21,8 @@ function App() {
     try{
       const response = await fetch(`https://openlibrary.org/search.json?title=${query}`)
       const data = await response.json()
-      // setContent(data.results)
       setContent(data.docs.map(book => book.title))
       // setContent(data)
-
       console.log(data)
       console.log(response)
 
@@ -55,11 +52,8 @@ function App() {
         <Route path='search/*' element={<Search />} >
             <Route index element={ <SearchBar content={content} setQuery={setQuery} setCurrentId={setCurrentId} /> } />
             <Route path=':slug' element={<SearchResults />} />
-
         </Route>
-        {/* <Route>
-          <Route path=':slug' element={<SearchResults />} /> 
-        </Route> */}
+        
       </Routes>
     </Layout>
     </>

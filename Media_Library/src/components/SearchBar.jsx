@@ -23,15 +23,19 @@ export default function SearchBar({content, setQuery, setCurrentId}){
     console.log("Search", content)
     
     return(
-    <>
-        <h1>Book search</h1>
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="search">Search title: </label>
-            <input type="text" id="search" placeholder="Write book title.." onChange={handleChange}></input>
-            <input type="submit" value="Search"></input>
-        </form>
-        <ul className="category-list">
-            {content?.map(item => <li key={item.id}><Link to={item.name} onClick={()=>handleClick(item.id)}>{item.name}</Link></li>)}
-        </ul>
-    </>)
+        <>
+            <h1>Book search</h1>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="search">Search title: </label>
+                <input type="text" id="search" placeholder="Write book title.." onChange={handleChange}></input>
+                <input type="submit" value="Search"></input>
+            </form>
+            <ul className="category-list">
+                {content?.map(item => 
+                <li key={item.id}>
+                    <Link to={item.name} onClick={()=>handleClick(item.id)}>{item.name}</Link>
+                </li>)}
+            </ul>
+        </>
+    )
 }
