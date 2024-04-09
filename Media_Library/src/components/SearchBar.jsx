@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
 // import SearchResults from "./SearchResults"
 
 // Props som sendes videre: content, setQuery, setCurrentId
 export default function SearchBar({query, setQuery}){
+
     const [search, setSearch] = useState("")
+
     
 
     const handleSubmit = (e)=>{
@@ -26,14 +29,14 @@ export default function SearchBar({query, setQuery}){
     return(
         <>
             {/* <h1>Book search</h1> */}
-            <form className="SearchBar" onSubmit={handleSubmit}>
-                <label htmlFor="search"> <h3>Search books   </h3></label>
+            <form className="search-bar" onSubmit={handleSubmit}>
+                <label htmlFor="search"> <h3>Search books</h3></label>
                 <input type="text" id="search" placeholder="Write book title.." onChange={handleChange}></input>
                 <input type="submit" value="Search"></input>
             </form>
 
             <ul className="category-list"> 
-                {query?.map(book => 
+                {query?.map((book)=> 
                     <li key={book._version_}>
                         <Link to={book.title} onClick={()=>handleClick(book._version_)}>{book.title}</Link>
                     </li>)

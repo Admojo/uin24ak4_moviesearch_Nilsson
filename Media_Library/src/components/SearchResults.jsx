@@ -1,45 +1,37 @@
-// import BookCards from "./BookCards"
 import BookCard from "./BookCard";
-import BookCards from "./BookCards";
-
-// "searchresults", som lister opp søkeresultater i "bookcards"
+import PropTypes from 'prop-types'
+// Lister opp søkeresultater i "Bookcard"
 export default function SearchResults ({content}) {
 
+    //Definere Props
+    SearchResults.propTypes = {
+        content: PropTypes.object
+    }
     const allBooks = content?.docs;
-    console.log(content?.docs)
+    console.log("SearchResults:", content?.docs)
 
     return (
     <>
-
-    {/* Dette innholdet bør egentlig bare vises, når det ikke er gjort et query i søkefeltet */}
-        <h3 className="NudeBackground"> Søkeresultat </h3>
-        <span className="display-Books">
-        {allBooks?.map(singleBook => 
-        <BookCard className="card" 
-            key={singleBook?._version_} 
-            title={singleBook?.title} 
-            first_publish_year={singleBook?.first_publish_year}
-            author_name={singleBook?.author_name}
-            ratings_average={singleBook?.ratings_average}
-            coverImage={singleBook?.cover_i}
-            isbn={singleBook?.isbn}>
-        </BookCard>)}
-
-        <BookCards />
+        <h3 className="nude-background"> Populære nå </h3>
+        <span>
+            {allBooks?.map((singleBook, id) => 
+                <li key={id}>
+                    <BookCard key={singleBook?._version_} 
+                    title={singleBook?.title} 
+                    first_publish_year={singleBook?.first_publish_year}
+                    author_name={singleBook?.author_name}
+                    ratings_average={singleBook?.ratings_average} 
+                    coverImage={singleBook?.cover_i}
+                    isbn={singleBook?.isbn}>
+                    </BookCard>
+                </li>)
+            }
         </span>
     </>
     )
-
-
-
-    // return (
-    //     <>
-    //         <BookCards > </BookCards>
-            
-    //     </>
-        
-    // )
+    
 }
+
 
   
 

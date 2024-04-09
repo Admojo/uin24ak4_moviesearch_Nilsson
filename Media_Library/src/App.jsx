@@ -7,7 +7,7 @@ import Layout from './components/Layout'
 import Search from './components/Search'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
-import SearchResultsDefault from './components/SearchResultsDefault'
+// import SearchResultsDefault from './components/SearchResults'
 
 function App() {
 
@@ -44,12 +44,11 @@ function App() {
         <Route path='/' index element= {<Home  />}/>
         <Route path='search/*'  element= {<Search  />}>
           <Route index element={<SearchBar content={query} setQuery={setQuery} />} />
-          {/* <Route path=''element={<SearchResults content={content}/>} /> */}
         </Route>
       </Routes>
       <Routes>
         {/* Vises på alle sider */}
-        <Route path='/*' index element={<SearchResultsDefault content={content}/>}/>
+        <Route path='/*' index element={<SearchResults content={content}/>}/>
       </Routes>
     </Layout>
     </>

@@ -1,5 +1,5 @@
-import SearchBar from "./SearchBar"
-import SearchResults from "./SearchResults"
+// import SearchBar from "./SearchBar"
+// import SearchResults from "./SearchResults"
 
 export default function Home(){
 

@@ -8,6 +8,7 @@ $colorBlue: #8bc2e6;
 
 body{
     background-color: $colorBlue;
+    list-style: none;
 
 
 .status-box{
@@ -22,6 +23,5 @@ body{
 .Dead{
     background-color: red;
 }
-
 
 }
