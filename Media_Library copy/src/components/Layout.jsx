@@ -1,13 +1,12 @@
 
 import { Link } from "react-router-dom";
-// import SearchBar from "./SearchBar";
 
 export default function Layout({children}){
 
     return(
         <>
         <header>
-            <nav className="NudeBackground">
+            <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="search">Search</Link></li>
@@ -19,7 +18,7 @@ export default function Layout({children}){
             standard oppsett som header og footer - men! alt mellom main-tagene endres, basert på gitte kriterier, pga plassering av {children} */}
             {children}
         </main>
-        <footer className="NudeBackground">Footer</footer>
+        <footer>Footer</footer>
         </>
     )
 }

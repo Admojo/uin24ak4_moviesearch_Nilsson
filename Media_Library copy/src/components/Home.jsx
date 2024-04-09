@@ -6,14 +6,11 @@ export default function Home(){
     console.log("Home")
     return (
         <>
-            <section>
-                <h1>Home</h1> 
-                <h1>Home</h1> 
-                <h1>Home</h1> 
+             <section>
                 <h1>Home</h1> 
             </section>
-            {/* <SearchBar />  */}
-            {/* <SearchResults /> */}
+            {/* <SearchBar /> 
+            <SearchResults /> */}
         </>
    
 )

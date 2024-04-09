@@ -7,25 +7,25 @@ import Layout from './components/Layout'
 import Search from './components/Search'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
+import SearchResultsDefault from './components/SearchResultsDefault'
 
 function App() {
 
   // UseState: Holder på staten til SearchBar 
-  const [content, setContent] = useState([])
   const [query, setQuery] = useState("James Bond")
-  const [currentId, setCurrentId] = useState("James Bond")
+  const [content, setContent] = useState([])
+  // const [currentId, setCurrentId] = useState("")
 
+  const API_URL = 'https://openlibrary.org/search.json?';
 
   // Async, fetch, await for å hente API data
-  const getData = async()=>{
+  const searchBooks = async()=>{
     try{
-      const response = await fetch(`https://openlibrary.org/search.json?title=${query}`)
-      const data = await response.json()
-      setContent(data.docs.map(book => book.title))
-      // setContent(data)
-      console.log(data)
-      console.log(response)
-
+      // const response = await fetch(`https://openlibrary.org/search.json?title=${query}`);
+      const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i&limit=10`);
+      const data = await response.json();
+      setContent(data)
+      console.log("Dette er data:", data)
     }
     catch{
       console.error("Det har skjedd en feil")
@@ -33,27 +33,24 @@ function App() {
   }
 
   useEffect(()=>{
-    getData()
-    console.log(currentId)
-  
+    searchBooks()
+    
   },[query])
 
-
-  // Hver Route fører til en ny "html-side" men istedet for å sende til ny htmlside, oppdateres UI-elementer, 
-  // basert på hvilken komponent som det refereres til og dets innhold.
-  // Det kan defineres en path=som definerer URL-sti som skal opprettes
   return (
     <>
-    <Layout>
+    {/* Layout component brukes som wrapper, returnerer content basert på routes(dvs. URL-sti som er valgt, vil vise tilhørende component)  */}
+    <Layout> 
       <Routes>
-        {/* Home Inneholder: skriver ut innholdet, basert på parameter: {query} -> {book.title} */}
-        <Route path='/' index element= {<Home  />} />
-        
-        <Route path='search/*' element={<Search />} >
-            <Route index element={ <SearchBar content={content} setQuery={setQuery} setCurrentId={setCurrentId} /> } />
-            <Route path=':slug' element={<SearchResults />} />
+        <Route path='/' index element= {<Home  />}/>
+        <Route path='search/*'  element= {<Search  />}>
+          <Route index element={<SearchBar content={query} setQuery={setQuery} />} />
+          {/* <Route path=':slug'element={<SearchResults content={content}/>} ></Route> */}
         </Route>
-        
+      </Routes>
+      <Routes>
+        {/* Vises på alle sider */}
+        <Route path='/*' index element={<SearchResultsDefault content={content}/>}/>
       </Routes>
     </Layout>
     </>
