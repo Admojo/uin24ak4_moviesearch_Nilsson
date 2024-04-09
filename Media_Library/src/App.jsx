@@ -14,7 +14,6 @@ function App() {
   // UseState: Holder på staten til SearchBar 
   const [query, setQuery] = useState("James Bond")
   const [content, setContent] = useState([])
-  // const [currentId, setCurrentId] = useState("")
 
   const API_URL = 'https://openlibrary.org/search.json?';
 
@@ -25,7 +24,7 @@ function App() {
       const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i&limit=10`);
       const data = await response.json();
       setContent(data)
-      console.log("Dette er data:", data)
+      console.log("Dette er data fra SearchBooks:", data)
     }
     catch{
       console.error("Det har skjedd en feil")
@@ -45,7 +44,7 @@ function App() {
         <Route path='/' index element= {<Home  />}/>
         <Route path='search/*'  element= {<Search  />}>
           <Route index element={<SearchBar content={query} setQuery={setQuery} />} />
-          {/* <Route path=':slug'element={<SearchResults content={content}/>} ></Route> */}
+          {/* <Route path=''element={<SearchResults content={content}/>} /> */}
         </Route>
       </Routes>
       <Routes>
