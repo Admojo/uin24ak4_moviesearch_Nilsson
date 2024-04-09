@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import Button from "./Button";
 // import SearchBar from "./SearchBar";
 
 export default function Layout({children}){
@@ -9,8 +10,11 @@ export default function Layout({children}){
         <header>
             <nav className="nude-background">
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="search">Search</Link></li>
+                    {/* <li><Link to="/">Home</Link></li>
+                    <li><Link to="search">Search</Link></li> */}
+                    <li><Button buttonText="Home" linkTo="/" /></li>
+                    <li><Button buttonText="Search" linkTo="/search" /></li>
+
                 </ul>
             </nav>
         </header>

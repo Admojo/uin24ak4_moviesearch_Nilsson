@@ -1,12 +1,9 @@
 import BookCard from "./BookCard";
 import PropTypes from 'prop-types'
+
 // Lister opp søkeresultater i "Bookcard"
 export default function SearchResults ({content}) {
 
-    //Definere Props
-    SearchResults.propTypes = {
-        content: PropTypes.object
-    }
     const allBooks = content?.docs;
     console.log("SearchResults:", content?.docs)
 
@@ -29,9 +26,9 @@ export default function SearchResults ({content}) {
         </span>
     </>
     )
-    
 }
 
-
-  
-
+ //Definere Props
+ SearchResults.propTypes = {
+    content: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    }

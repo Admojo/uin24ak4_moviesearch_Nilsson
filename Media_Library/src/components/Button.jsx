@@ -1,0 +1,31 @@
+import { Link } from "react-router-dom"
+export default function Button({buttonText, linkTo}) {
+
+    return(
+    //     <button className="btn cube cube-hover" type="button">
+    //     <div className="bg-top">
+    //         <div className="bg-inner"></div>
+    //     </div>
+    //     <div className="bg-right">
+    //         <div className="bg-inner"></div>
+    //     </div>
+    //      <div className="bg">
+    //          <div className="bg-inner"></div>
+    //     </div>
+    //     <div className="text">{buttonText}</div>
+    // </button>
+
+    <Link to={linkTo} className="btn cube cube-hover" type="button">
+        <div className="bg-top">
+            <div className="bg-inner"></div>
+        </div>
+        <div className="bg-right">
+            <div className="bg-inner"></div>
+        </div>
+        <div className="bg">
+             <div className="bg-inner"></div>
+        </div>
+        <div className="text">{buttonText}</div>
+    </Link>
+    )
+}

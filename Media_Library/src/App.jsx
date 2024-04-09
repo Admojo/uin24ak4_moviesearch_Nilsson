@@ -21,7 +21,7 @@ function App() {
   const searchBooks = async()=>{
     try{
       // const response = await fetch(`https://openlibrary.org/search.json?title=${query}`);
-      const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i&limit=10`);
+      const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i,isbn&limit=10`);
       const data = await response.json();
       setContent(data)
       console.log("Dette er data fra SearchBooks:", data)
