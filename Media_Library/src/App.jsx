@@ -33,8 +33,10 @@ function App() {
 
   useEffect(()=>{
     searchBooks()
+    console.log("useEffect:",query)
     
   },[query])
+  // console.log("App.jsx, setContent:", setContent)
 
   return (
     <>
@@ -48,7 +50,7 @@ function App() {
       </Routes>
       <Routes>
         {/* Vises på alle sider */}
-        <Route path='/*' index element={<SearchResults content={content}/>}/>
+        <Route path='/*' index element={<SearchResults content={content} title={query}/>}/>
       </Routes>
     </Layout>
     </>

@@ -1,3 +1,17 @@
+.search-result-list-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .search-result-list-wrapper{
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
 .category-list{
     list-style: none;
     display: flex;
@@ -42,13 +56,13 @@
     border: solid 5px #000;
 }
 
-.book-description{
+// .book-description{
 
-}
+// }
 
-.book-review{
+// .book-review{
 
-}
+// }
 // .amazon-btn {
 //     display: inline-flex;
 //     padding: 0.2em 0.2em;
@@ -131,6 +145,7 @@
 
 .button-50:hover {
   text-decoration: none;
+  background-color: chartreuse;
 }
 
 .button-50:active {

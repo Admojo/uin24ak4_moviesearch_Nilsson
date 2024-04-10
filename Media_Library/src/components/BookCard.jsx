@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 // i en fornuftig HTML-struktur.
 export default function BookCard({key, title, first_publish_year, author_name, ratings_average, coverImage, isbn}){
     
-    console.log("Key:", key)
+    // console.log("Key:", key)
+    // console.log("Book card title:", title)
     return(
         <>
             <article className="single-book-card" key={key}>

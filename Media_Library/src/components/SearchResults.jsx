@@ -2,15 +2,18 @@ import BookCard from "./BookCard";
 import PropTypes from 'prop-types'
 
 // Lister opp søkeresultater i "Bookcard"
-export default function SearchResults ({content}) {
+export default function SearchResults ({content, title}) {
 
     const allBooks = content?.docs;
     console.log("SearchResults:", content?.docs)
+    console.log("SearchResults, content:", content)
+    console.log("SearchResults, title:", title)
 
     return (
     <>
-        <h3 className="nude-background"> Populære nå </h3>
-        <span>
+        <span className="search-result-list-wrapper">
+        {/* Vise overskrift etter at søk er gjort: Søkereulstater for: "query" */}
+        {title == null ? <h3> Populære nå </h3> : <h3> Search results for: {title} </h3>  }
             {allBooks?.map((singleBook, id) => 
                 <li key={id}>
                     <BookCard key={singleBook?._version_} 
@@ -30,5 +33,6 @@ export default function SearchResults ({content}) {
 
  //Definere Props
  SearchResults.propTypes = {
-    content: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    content: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    title: PropTypes.string
     }

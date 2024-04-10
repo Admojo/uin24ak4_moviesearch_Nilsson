@@ -29,14 +29,15 @@ export default function SearchBar({query, setQuery}){
                 <input type="text" className="input" placeholder="Search for books.." onChange={handleChange}></input>
                 <input type="submit" className="button-50" role="button" value="Search"></input>
             </form>
-            <ul className="category-list"> 
-                {query?.map((book)=> 
-                    <li key={book._version_}>
-                        {/* <Link to={book.title} onClick={()=>handleClick(book._version_)}> {book.title} </Link> */}
-                        <Link to={'/book/${book.id}'} onClick={()=>handleClick(book._version_)}> {book.title} </Link>
-                    </li>)
+            {/* {setQuery == null ? <h3> Populære nå </h3> : <h3> Search results for: {search} </h3>  } */}
+                <ul className="category-list"> 
+                    {query?.map((book)=> 
+                        <li key={book._version_}>
+                         {/* <Link to={book.title} onClick={()=>handleClick(book._version_)}> {book.title} </Link> */}
+                            <Link to={'/book/${book.id}'} onClick={()=>handleClick(book._version_)}> {book.title} </Link>
+                        </li>)
                 }
-            </ul>
+                </ul>
             {/* <SearchResults></SearchResults> */}
         </>
     )
