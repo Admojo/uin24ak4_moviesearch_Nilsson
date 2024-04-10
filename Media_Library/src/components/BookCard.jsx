@@ -9,20 +9,31 @@ export default function BookCard({key, title, first_publish_year, author_name, r
     // console.log("Book card title:", title)
     return(
         <>
-            <article className="single-book-card" key={key}>
+        {/* <div className="book-item-wrapper"> */}
+            <article className="book-card" key={key}>
                 <section className="book-cover">
                     <img src={`https://covers.openlibrary.org/b/id/${coverImage}-M.jpg`} alt={title}/>
                 </section>
-                <section className="book-description">
+                <section className="book-redirect">
+                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
+                    className="button-54" role="button"> Read More</a>}
+                </section>
+                <section className="book-redirect">
+                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
+                    className="button-54" role="button"> Buy on Amazon</a>}
+                </section>
+                <section className="book-properties">
                     <h3>{title}</h3>
                     <h4>Author: {author_name}</h4>
                     <h5>First publish year: {first_publish_year}</h5>
-                </section>
-                <section>
                     {ratings_average == null ? <p>Average rating: none</p> : <p>Average rating: {ratings_average}</p>} 
-                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`} className="button-54" role="button"> Buy on Amazon</a>}
                 </section>
+                {/* <section className="book-redirect">
+                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
+                    className="button-54" role="button"> Buy on Amazon</a>}
+                </section> */}
             </article>
+        {/* </div> */}
         </>
     )
 }
