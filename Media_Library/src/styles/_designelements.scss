@@ -10,9 +10,28 @@
 
 .search-result-bar {
   text-transform: italic;
+  padding-top: 5px;
   padding-bottom: 5px;
   border-bottom: #000 solid 2px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+
+  box-shadow: 0 7px rgba(0, 0, 0, 0.155);
+
+  // box-shadow: 5px 5px 17px #c8c8c8,
+            //  -5px -5px 17px #ffffff
+            //  10px 5px 17px #723434,
+            //  20px -5px 17px #2c37c8;
+
+            // Box shadow from referance: nr #49 by Allilgator https://getcssscan.com/css-box-shadow-examples
+            //  box-shadow: #c8c8c8 0px 10px, 
+            //  rgba(250, 250, 255, 0.129) 0px 10px, 
+            //  rgba(125, 125, 131, 0.2) 0px 15px;
+             
 }
+
+
+
 
 // .category-list{
 //     list-style: none;

@@ -36,6 +36,9 @@
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
         gap: 10px; 
         align-items: baseline; /* Ikke fjern denne, justere hvert kort slik at hver overskirft i book-card blir horisontal med andre book-cards */
+
+        //kilde: https://getcssscan.com/css-box-shadow-examples nr #62
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     }
     
     // .book-item-wrapper  {
@@ -56,6 +59,10 @@
             // .book-cover{
             //     align-items: baseline;
             // }
+    }
+
+    .book-card:hover{
+        
     }
 
     .book-card > .book-cover{

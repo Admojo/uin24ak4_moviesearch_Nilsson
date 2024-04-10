@@ -14,6 +14,11 @@ export default function SearchResults ({content, title}) {
          {/* Vise overskrift etter at søk er gjort: Søkereulstater for: "query" - vil alltid innfri betingelse, 
         fordi james bond er satt som default i useState */}
         <div className='search-result-bar'>{title == null ? <h3> Populære nå </h3> : <h3> Showing results for: {title} </h3>  }</div>
+        <div className="card">
+            <p><span>HOVER ME</span></p>
+            <p><span>HOVER ME</span></p>
+            <p><span>HOVER ME</span></p>
+        </div>
         <span className='book-item-wrapper'>
             {allBooks?.map((singleBook, id) => 
                 <li key={id}>
