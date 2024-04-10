@@ -118,7 +118,24 @@ $colorTextHover: #f0ececf9;
     animation: bounce 0.1s linear;
   }
 
+  .cube:focus .bg-inner {
+    background: $bgHover;
+    transition: all 0.4s;
+  }
   
+  .cube:focus .text {
+    color: $colorTextHover;
+    transition: all 0.4s;
+  }
+  
+  .cube:focus .bg-right,
+  .cube:focus .bg,
+  .cube:focus .bg-top 
+  .cube:focus {
+    background: $colorBordersHover;
+  }
+
+
 
   
   @keyframes bounce {
