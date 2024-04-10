@@ -1,15 +1,35 @@
 // NB! Alt dette er lånt fra denne kilden: https://uiverse.io/gagan-gv/rotten-fish-89 , kun for moro skyld: 
 
+// $colorBorders: #d4af37;
+// $colorBorders: #d4af37;
+// $colorBordersHover: #28282d;
+
+// $bgFirst:#28282d;
+// $bgHover:#d4af37;
+
+// $colorTextFirst: #d4af37;
+// $colorTextHover: #28282d;
+
+
+$colorBorders: #212121;
+$colorBordersHover: rgb(28, 54, 160);
+
+$bgFirst: #e8e8e8;
+$bgHover:#a7f1b7dc;
+
+$colorTextFirst: #d44437d3;
+$colorTextHover: #1d1818f9;
+
 .btn {
     display: block;
     padding: 0.7em 1em;
-    background: transparent;
+    background: $bgFirst;
     outline: none;
     border: 0;
-    color: #d4af37;
+    color: $colorTextFirst;
     letter-spacing: 0.1em;
-    font-family: monospace;
-    font-size: 17px;
+    // font-family: monospace;
+    font-size: 0.5em;
     font-weight: bold;
     cursor: pointer;
     z-index: 1;
@@ -23,7 +43,7 @@
   .cube .bg-top {
     position: absolute;
     height: 10px;
-    background: #d4af37;
+    background: $colorBorders;
     bottom: 100%;
     left: 5px;
     right: -5px;
@@ -42,13 +62,13 @@
     bottom: 0;
     top: 0;
     right: 0;
-    background: #d4af37;
+    background: $colorBorders;
     transition: all 0.4s;
   }
   
   .cube .bg-right {
     position: absolute;
-    background: #d4af37;
+    background: $colorBorders;
     top: -5px;
     z-index: 0;
     bottom: 5px;
@@ -63,7 +83,7 @@
   }
   
   .cube .bg-inner {
-    background: #28282d;
+    background: $bgFirst;
     position: absolute;
     left: 2px;
     right: 2px;
@@ -77,19 +97,19 @@
   }
   
   .cube:hover .bg-inner {
-    background: #d4af37;
+    background: $bgHover;
     transition: all 0.4s;
   }
   
   .cube:hover .text {
-    color: #28282d;
+    color: $colorTextHover;
     transition: all 0.4s;
   }
   
   .cube:hover .bg-right,
   .cube:hover .bg,
   .cube:hover .bg-top {
-    background: #28282d;
+    background: $colorBordersHover;
   }
   
   .cube:active {

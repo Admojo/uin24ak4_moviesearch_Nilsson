@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import PropTypes from 'prop-types'
+
 export default function Button({buttonText, linkTo}) {
 
     return(
@@ -28,4 +30,9 @@ export default function Button({buttonText, linkTo}) {
         <div className="text">{buttonText}</div>
     </Link>
     )
+}
+
+Button.propTypes = {
+    buttonText: PropTypes.string,
+    linkTo: PropTypes.string
 }

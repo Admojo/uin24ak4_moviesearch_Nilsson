@@ -1,22 +1,56 @@
 // NB!! Referanse: https://uiverse.io/lenfear23/helpless-swan-97
 // Kun testet for moro skyld
 
-.input {
-    max-width: 200px;
-    min-height: 40px;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
+// .input {
+//     max-width: 200px;
+//     min-height: 40px;
+//     padding: 10px;
+//     font-family: 'Courier New', Courier, monospace;
+//     outline: none;
+//     background: #e8e8e8;
+//     box-shadow: 5px 5px 17px #c8c8c8,
+//                -5px -5px 17px #ffffff;
+//     border: none;
+//     border-radius: 10px;
+//     transition: all .5s;
+//   }
+  
+//   .input:focus {
+//     background: #e8e8e8;
+//     box-shadow: inset 5px 5px 17px #c8c8c8,
+//               inset -5px -5px 17px #ffffff;
+//   }
+
+
+
+
+// Copyright: https://uiverse.io/andrew-demchenk0/polite-stingray-67
+
+
+  .input {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    // width: 10rem;
+    // height: 4rem;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
     outline: none;
-    background: #e8e8e8;
-    box-shadow: 5px 5px 17px #c8c8c8,
-               -5px -5px 17px #ffffff;
-    border: none;
-    border-radius: 10px;
-    transition: all .5s;
+  }
+  
+  .input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
   }
   
   .input:focus {
-    background: #e8e8e8;
-    box-shadow: inset 5px 5px 17px #c8c8c8,
-              inset -5px -5px 17px #ffffff;
+    border: 2px solid var(--input-focus);
   }

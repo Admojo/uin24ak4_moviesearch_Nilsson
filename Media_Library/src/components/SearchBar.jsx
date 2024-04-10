@@ -28,8 +28,6 @@ export default function SearchBar({query, setQuery}){
                 <label htmlFor="search"></label>
                 <input type="text" className="input" placeholder="Search for books.." onChange={handleChange}></input>
                 <input type="submit" className="button-50" role="button" value="Search"></input>
-               
-
             </form>
             <ul className="category-list"> 
                 {query?.map((book)=> 
