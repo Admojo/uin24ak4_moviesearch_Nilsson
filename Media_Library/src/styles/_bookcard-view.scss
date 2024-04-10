@@ -1,20 +1,12 @@
 .book-item-wrapper{
     display: flex;
     flex-direction: column;
-    // background-color: #dcdadad4;
     padding: 1em;
   }
 
 .book-card {
-    // background-color: rgb(247, 236, 231);
-    // margin-top:  10px;
     margin-bottom: 0.3em;
     margin: 1em;
-    // background-color: rgba(198, 222, 222, 0.697);
-    // border: solid 2px;
-    // border-color: rgb(165, 136, 42);
-    // border: solid 1px chartreuse;
-    
 }
 
 .book-cover img{
@@ -36,39 +28,28 @@
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
         gap: 10px; 
         align-items: baseline; /* Ikke fjern denne, justere hvert kort slik at hver overskirft i book-card blir horisontal med andre book-cards */
-
         //kilde: https://getcssscan.com/css-box-shadow-examples nr #62
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     }
     
-    // .book-item-wrapper  {
-    //     .book-card{align-items: stretch;}
-    // }
 
     .book-card{
         display: flex;
         flex-direction: column;
-        // justify-content: space-around;
-
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         align-items: stretch;
         padding-bottom: 1em;
-        // justify-content: space-around;
-        // justify-items: baseline;
-            // .book-cover{
-            //     align-items: baseline;
-            // }
+     
     }
 
     .book-card:hover{
-        
+
     }
 
     .book-card > .book-cover{
         align-items: baseline;
     }
-
 
     .book-card section {
         justify-content: space-around;
@@ -79,7 +60,6 @@
         max-width: 100%;
         height: auto;
         border-radius: 5px;
-        // align-items: baseline;
     }
 
     .book-properties{
@@ -89,7 +69,6 @@
 
     .book-redirect{
         display: flex;
-        // justify-content: space-between;
         margin-top:10px;
         justify-content: center;
 

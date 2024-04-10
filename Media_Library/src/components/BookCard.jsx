@@ -7,6 +7,7 @@ export default function BookCard({key, title, first_publish_year, author_name, r
     
     // console.log("Key:", key)
     // console.log("Book card title:", title)
+
     return(
         <>
         {/* <div className="book-item-wrapper"> */}
@@ -20,6 +21,10 @@ export default function BookCard({key, title, first_publish_year, author_name, r
                 </section>
                 <section className="book-redirect">
                     {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
+                    className="button-54" role="button"> Add to My Bookshelf</a>}
+                </section>
+                <section className="book-redirect">
+                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
                     className="button-54" role="button"> Buy on Amazon</a>}
                 </section>
                 <section className="book-properties">
@@ -28,17 +33,13 @@ export default function BookCard({key, title, first_publish_year, author_name, r
                     <h5>First publish year: {first_publish_year}</h5>
                     {ratings_average == null ? <p>Average rating: none</p> : <p>Average rating: {ratings_average}</p>} 
                 </section>
-                {/* <section className="book-redirect">
-                    {isbn == null ? console.log("Ingen ISBN Funnet") : <a href={`https://www.amazon.com/s?k=${isbn?.[0]}`}
-                    className="button-54" role="button"> Buy on Amazon</a>}
-                </section> */}
             </article>
         {/* </div> */}
         </>
     )
 }
 
- // Må definere propTypes ifølge dokumentasjon react
+ 
  BookCard.propTypes = {
     key: PropTypes.string, //Usikker på om det blir riktig håndtering av this.id
     title: PropTypes.string.isRequired,

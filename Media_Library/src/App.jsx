@@ -7,6 +7,8 @@ import Layout from './components/Layout'
 import Search from './components/Search'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
+import BookShelf from './components/BookShelf'
+import MyBookShelf from './components/MyBookShelf'
 // import SearchResultsDefault from './components/SearchResults'
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
   const searchBooks = async()=>{
     try{
       // const response = await fetch(`https://openlibrary.org/search.json?title=${query}`);
-      const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i,isbn&limit=20`);
+      const response = await fetch(`${API_URL}&title=${query}&fields=key,title,first_publish_year,author_name,cover_i,isbn&limit=10`);
       const data = await response.json();
       setContent(data)
       console.log("Dette er data fra SearchBooks:", data)
@@ -43,14 +45,19 @@ function App() {
     {/* Layout component brukes som wrapper, returnerer content basert på routes(dvs. URL-sti som er valgt, vil vise tilhørende component)  */}
     <Layout> 
       <Routes>
-        <Route path='/' index element= {<Home  />}/>
+        <Route path='/' element= {<Home/>}>
+          <Route index element={<BookShelf content={content} title={query}/>} />
+        </Route>
         <Route path='search/*'  element= {<Search  />}>
           <Route index element={<SearchBar content={query} setQuery={setQuery} />} />
+          {/* <Route /*path=':slug/'*//*element={<SearchResults content={content} title={query}/>}/> */}
         </Route>
       </Routes>
       <Routes>
-        {/* Vises på alle sider */}
-        <Route path='/*' index element={<SearchResults content={content} title={query}/>}/>
+        <Route path='search/' index element={<SearchResults content={content} title={query}/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/mybookshelf' index element={<MyBookShelf content={content} title={query}/>}/>
       </Routes>
     </Layout>
     </>

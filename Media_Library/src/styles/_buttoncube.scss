@@ -108,7 +108,8 @@ $colorTextHover: #f0ececf9;
   
   .cube:hover .bg-right,
   .cube:hover .bg,
-  .cube:hover .bg-top {
+  .cube:hover .bg-top 
+  .cube:focus {
     background: $colorBordersHover;
   }
   
@@ -116,6 +117,9 @@ $colorTextHover: #f0ececf9;
     z-index: 9999;
     animation: bounce 0.1s linear;
   }
+
+  
+
   
   @keyframes bounce {
     50% {
